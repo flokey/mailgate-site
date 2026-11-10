@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mailgate Privacy Policy</title>
+<meta name="description" content="How mailgate accesses, uses, stores and shares Google user data.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<nav><a href="./">Home</a><a href="privacy.html">Privacy Policy</a></nav>
+
+<h1>Privacy Policy</h1>
+<p class="lead">Effective 10 November 2026</p>
+
+<p>mailgate is a self-hosted program. It runs on hardware controlled by the person who installs it (the "owner"), and it talks to Google's Gmail API directly from there. The developer of mailgate does not run any server for it and never receives any of your data.</p>
+
+<h2>Data mailgate accesses</h2>
+<p>mailgate requests a single Google OAuth scope: <code>https://www.googleapis.com/auth/gmail.readonly</code>. If Google grants any additional scope, mailgate refuses to save the token. With this scope mailgate reads message headers (such as sender, recipient, subject, date and authentication results), labels, and message bodies of the one Gmail account the owner authorizes. It cannot send, delete or change email.</p>
+
+<h2>How the data is used</h2>
+<p>mailgate uses Gmail data only to provide its single feature: giving the owner's personal AI agent a filtered, redacted, read-only view of mail the owner has chosen to share (for example orders, bookings, discounts and appointments). Messages that fail the owner's filters, and security or financial mail, are not passed to the agent. Allowed messages are converted to plain text, sensitive values are redacted, and attachments are removed before the agent sees them.</p>
+<p>Gmail data is not used for advertising, is not sold, and is not used to train or improve general-purpose AI or machine-learning models.</p>
+
+<h2>Storage</h2>
+<ul>
+  <li><strong>OAuth token.</strong> The refresh token is stored in a file on the owner's own machine, in a private data directory that the agent cannot read.</li>
+  <li><strong>Email content.</strong> mailgate does not keep a copy of messages. It fetches them from Gmail when asked and holds them in memory only while handling the request.</li>
+  <li><strong>Audit log.</strong> mailgate writes a local log of each request (time, tool name, search query, message IDs passed or blocked and the reason). It never records subjects, snippets or message bodies. The log stays on the owner's machine.</li>
+</ul>
+
+<h2>Sharing</h2>
+<p>mailgate shares filtered message text only with the AI agent that the owner configures and runs. Whatever that agent does with the text is governed by the agent's own terms and the owner's settings. mailgate itself does not transfer Google user data to the developer or to any other third party.</p>
+
+<h2>Limited Use</h2>
+<p>mailgate's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+
+<h2>Revoking access and deleting data</h2>
+<p>You can revoke mailgate's access at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>. To delete everything mailgate stored, the owner deletes its data directory (the token file and audit log). Because there is no developer-run server, there is no other copy to delete.</p>
+
+<h2>Changes</h2>
+<p>Changes to this policy are published on this page and tracked in the project's Git history.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy: <a href="https://github.com/flokey/mailgate-site/issues">open an issue on GitHub</a>.</p>
+
+<footer><a href="./">mailgate</a> · <a href="https://github.com/flokey/mailgate-site">github.com/flokey/mailgate-site</a></footer>
+</main>
+</body>
+</html>

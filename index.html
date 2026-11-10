@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mailgate</title>
+<meta name="description" content="mailgate: a self-hosted, read-only Gmail filtering proxy for personal AI agents.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<nav><a href="./">Home</a><a href="privacy.html">Privacy Policy</a></nav>
+
+<h1>mailgate</h1>
+<p class="lead">A self-hosted, read-only Gmail filtering proxy that lets a personal AI agent see only safe, filtered email.</p>
+
+<h2>What it does</h2>
+<p>mailgate is a small program that a person runs on their own computer or home server. It connects to one Gmail mailbox with the read-only scope <code>https://www.googleapis.com/auth/gmail.readonly</code> and gives a personal assistant agent access to a filtered view of that mailbox through the Model Context Protocol (MCP).</p>
+<p>Before any message reaches the agent, mailgate:</p>
+<ul>
+  <li>only considers messages carrying a specific Gmail label that the owner applies;</li>
+  <li>blocks security and financial mail (verification codes, password resets, sign-in alerts, banks, payment providers);</li>
+  <li>only allows senders on the owner's allowlist, such as shops, airlines and hotels;</li>
+  <li>converts the message to plain text and redacts codes, links, email addresses, phone numbers, ID numbers and card numbers;</li>
+  <li>drops attachments.</li>
+</ul>
+<p>The agent uses this to keep track of purchases, bookings, discounts and appointments. mailgate cannot send, delete, or modify email.</p>
+
+<h2>Who it is for</h2>
+<p>mailgate is a personal, non-commercial project for the developer and their family. It is not a hosted service: there is no server operated by the developer, and no data is sent to the developer. Each installation runs under the control of the mailbox owner.</p>
+
+<h2>Google user data</h2>
+<p>See the <a href="privacy.html">Privacy Policy</a> for exactly what Gmail data mailgate reads, how it is used, and where it is stored.</p>
+
+<footer>Questions: <a href="https://github.com/flokey/mailgate-site/issues">open an issue</a>.</footer>
+</main>
+</body>
+</html>
